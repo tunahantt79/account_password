@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "640076138988",
+    "project_id": "account-password-app",
+    "storage_bucket": "account-password-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:640076138988:android:2b0aee2dd98c22127798c9",
+        "android_client_info": {
+          "package_name": "com.example.account_password2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "640076138988-t6qfr4tct4dfp40cob62674adrnnl5ro.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8SkG74Noq7KXlwunZmHhvmR2nizHykUE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "640076138988-t6qfr4tct4dfp40cob62674adrnnl5ro.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
