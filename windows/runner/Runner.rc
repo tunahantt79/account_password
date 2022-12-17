@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "account_password2" "\0"
+            VALUE "FileDescription", "kullanici_sifre" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "account_password2" "\0"
+            VALUE "InternalName", "kullanici_sifre" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2022 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "account_password2.exe" "\0"
-            VALUE "ProductName", "account_password2" "\0"
+            VALUE "OriginalFilename", "kullanici_sifre.exe" "\0"
+            VALUE "ProductName", "kullanici_sifre" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

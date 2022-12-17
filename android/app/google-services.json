@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "640076138988",
-    "project_id": "account-password-app",
-    "storage_bucket": "account-password-app.appspot.com"
+    "project_number": "883415949448",
+    "project_id": "new-app-account",
+    "storage_bucket": "new-app-account.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:640076138988:android:2b0aee2dd98c22127798c9",
+        "mobilesdk_app_id": "1:883415949448:android:29e76204e1f85a2977ff3d",
         "android_client_info": {
-          "package_name": "com.example.account_password2"
+          "package_name": "com.example.kullanici_sifre"
         }
       },
       "oauth_client": [
         {
-          "client_id": "640076138988-t6qfr4tct4dfp40cob62674adrnnl5ro.apps.googleusercontent.com",
+          "client_id": "883415949448-k7u6jesamog9v39hm1s8lamv02du5pjs.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB8SkG74Noq7KXlwunZmHhvmR2nizHykUE"
+          "current_key": "AIzaSyClIWv4T_U4bVkOcyU-7xF2guwIbD7uvXc"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "640076138988-t6qfr4tct4dfp40cob62674adrnnl5ro.apps.googleusercontent.com",
+              "client_id": "883415949448-k7u6jesamog9v39hm1s8lamv02du5pjs.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

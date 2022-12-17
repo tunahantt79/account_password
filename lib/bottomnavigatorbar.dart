@@ -1,7 +1,7 @@
-import 'package:account_password2/home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:kullanici_sifre/profile_page.dart';
 
-import 'profile_page.dart';
+import 'home_page.dart';
 
 class BottomNavigatorBar extends StatefulWidget {
   const BottomNavigatorBar({super.key});

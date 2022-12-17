@@ -1,5 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+
+import 'image_add.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -8,40 +11,94 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final user = FirebaseAuth.instance.currentUser!;
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text('Profil'),
-      ),
-      body: Padding(
-        padding: EdgeInsets.all(32),
-        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Text('Giriş yapılan e-mail'),
-          SizedBox(
-            height: 8,
+        appBar: AppBar(
+          centerTitle: true,
+          title: const Text('Profil'),
+        ),
+        drawer: Drawer(
+          child: ListView(
+            children: [
+              const Center(child: Text('Giriş yapılan e-mail')),
+              const SizedBox(
+                height: 8,
+              ),
+              Center(
+                child: Text(
+                  user.email!,
+                  style: const TextStyle(fontSize: 20),
+                ),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: ElevatedButton.icon(
+                  onPressed: () => FirebaseAuth.instance.signOut(),
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: const Size.fromHeight(50),
+                  ),
+                  icon: const Icon(
+                    Icons.arrow_back,
+                    size: 32,
+                  ),
+                  label: const Text(
+                    'Çıkış',
+                    style: TextStyle(fontSize: 24),
+                  ),
+                ),
+              )
+            ],
           ),
-          Text(
-            user.email!,
-            style: TextStyle(fontSize: 20),
-          ),
-          SizedBox(
-            height: 40,
-          ),
-          ElevatedButton.icon(
-            onPressed: () => FirebaseAuth.instance.signOut(),
-            style: ElevatedButton.styleFrom(
-              minimumSize: Size.fromHeight(50),
-            ),
-            icon: Icon(
-              Icons.arrow_back,
-              size: 32,
-            ),
-            label: Text(
-              'Çıkış',
-              style: TextStyle(fontSize: 24),
-            ),
-          )
-        ]),
-      ),
-    );
+        ),
+        body: buildBody());
   }
+}
+
+Widget buildBody() {
+  final user = FirebaseAuth.instance.currentUser!;
+  return StreamBuilder<QuerySnapshot>(
+      stream: FirebaseFirestore.instance.collection('users').snapshots(),
+      builder: (context, snapshot) {
+        if (!snapshot.hasData) return const LinearProgressIndicator();
+
+        return ListView.builder(
+          shrinkWrap: true,
+          primary: true,
+          itemCount: 1,
+          itemBuilder: (context, index) {
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const GoogleMLKitExample(),
+                const SizedBox(
+                  height: 20,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: Row(
+                    children: [
+                      const Icon(
+                        Icons.mail,
+                        size: 40,
+                      ),
+                      const SizedBox(
+                        width: 20,
+                      ),
+                      Card(
+                          color: Colors.transparent,
+                          elevation: 0,
+                          child: Text(
+                            user.email!,
+                            style: const TextStyle(fontSize: 20),
+                          )),
+                    ],
+                  ),
+                ),
+              ],
+            );
+          },
+        );
+      });
 }

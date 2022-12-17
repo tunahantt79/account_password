@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +17,7 @@ class SignUpPage extends StatefulWidget {
 class _SignUpPageState extends State<SignUpPage> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
-
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   @override
   void dispose() {
     emailController.dispose();
@@ -28,51 +29,51 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      padding: EdgeInsets.all(30),
+      padding: const EdgeInsets.all(30),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SizedBox(
+          const SizedBox(
             height: 60,
           ),
-          FlutterLogo(
+          const FlutterLogo(
             size: 120,
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
-          Text(
+          const Text(
             'Merhaba,\n Tekrar Hoşgeldin',
             style: TextStyle(fontSize: 32),
           ),
-          SizedBox(
+          const SizedBox(
             height: 40,
           ),
           TextField(
             controller: emailController,
             cursorColor: Colors.white,
             textInputAction: TextInputAction.next,
-            decoration: InputDecoration(labelText: 'Email'),
+            decoration: const InputDecoration(labelText: 'Email'),
           ),
-          SizedBox(
+          const SizedBox(
             height: 4,
           ),
           TextField(
             controller: passwordController,
             textInputAction: TextInputAction.next,
-            decoration: InputDecoration(labelText: 'Şifre'),
+            decoration: const InputDecoration(labelText: 'Şifre'),
             obscureText: true,
           ),
           ElevatedButton.icon(
               onPressed: signUp,
-              icon: Icon(Icons.arrow_forward),
-              label: Text('Kayıt Ol')),
-          SizedBox(
+              icon: const Icon(Icons.arrow_forward),
+              label: const Text('Kayıt Ol')),
+          const SizedBox(
             height: 20,
           ),
           RichText(
               text: TextSpan(
-                  style: TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.white),
                   text: 'Hesabın var mı?  ',
                   children: [
                 TextSpan(
@@ -94,6 +95,7 @@ class _SignUpPageState extends State<SignUpPage> {
         email: emailController.text.trim(),
         password: passwordController.text.trim(),
       );
+    //  await _firestore.collection('users').doc(email.user).set('name') ;
     } on FirebaseAuthException catch (e) {
       print(e);
     }

@@ -1,4 +1,4 @@
-package com.example.account_password2
+package com.example.kullanici_sifre
 
 import io.flutter.embedding.android.FlutterActivity
 

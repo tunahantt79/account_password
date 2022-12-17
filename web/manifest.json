@@ -1,6 +1,6 @@
 {
-    "name": "account_password2",
-    "short_name": "account_password2",
+    "name": "kullanici_sifre",
+    "short_name": "kullanici_sifre",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
