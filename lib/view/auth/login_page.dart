@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'forgot_password_page.dart';
-import 'main.dart';
+import '../../main.dart';
 
 class LoginPage extends StatefulWidget {
   final VoidCallback onClickedSignUp;

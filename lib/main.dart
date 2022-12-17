@@ -1,9 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:kullanici_sifre/auth_page.dart';
+import 'package:kullanici_sifre/view/auth/auth_page.dart';
 
-import 'bottomnavigatorbar.dart';
+import 'view/navigation_bar/bottomnavigatorbar.dart';
 
 
 void main() async {

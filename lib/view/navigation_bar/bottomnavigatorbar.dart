@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:kullanici_sifre/profile_page.dart';
+import 'package:kullanici_sifre/view/navigation_bar/profile/profile_page.dart';
 
-import 'home_page.dart';
+import 'home/home_page.dart';
 
 class BottomNavigatorBar extends StatefulWidget {
   const BottomNavigatorBar({super.key});

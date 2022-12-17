@@ -6,14 +6,6 @@ import 'package:url_launcher/url_launcher.dart';
 
 enum SocialMedia { facebook, twitter, email, whatsapp, chrome }
 
-Future main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp,
-    DeviceOrientation.portraitDown,
-  ]);
-}
-
 Widget buildSocialButtons() => buildSocialButton(
     icon: Icons.ios_share_outlined,
     color: Colors.white,

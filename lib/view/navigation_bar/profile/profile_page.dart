@@ -62,43 +62,38 @@ Widget buildBody() {
       builder: (context, snapshot) {
         if (!snapshot.hasData) return const LinearProgressIndicator();
 
-        return ListView.builder(
-          shrinkWrap: true,
-          primary: true,
-          itemCount: 1,
-          itemBuilder: (context, index) {
-            return Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const GoogleMLKitExample(),
-                const SizedBox(
-                  height: 20,
+        return ListView(shrinkWrap: true, primary: false, children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const GoogleMLKitExample(),
+              const SizedBox(
+                height: 20,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: Row(
+                  children: [
+                    const Icon(
+                      Icons.mail,
+                      size: 40,
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    Card(
+                        color: Colors.transparent,
+                        elevation: 0,
+                        child: Text(
+                          user.email!,
+                          style: const TextStyle(fontSize: 20),
+                        )),
+                  ],
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: Row(
-                    children: [
-                      const Icon(
-                        Icons.mail,
-                        size: 40,
-                      ),
-                      const SizedBox(
-                        width: 20,
-                      ),
-                      Card(
-                          color: Colors.transparent,
-                          elevation: 0,
-                          child: Text(
-                            user.email!,
-                            style: const TextStyle(fontSize: 20),
-                          )),
-                    ],
-                  ),
-                ),
-              ],
-            );
-          },
-        );
+              ),
+            ],
+          )
+        ]);
       });
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kullanici_sifre/share.dart';
+import 'package:kullanici_sifre/view/navigation_bar/home/share.dart';
 
 class InfoPage extends StatefulWidget {
   final String appbarTitle;
@@ -25,7 +25,7 @@ class _DetayPageState extends State<InfoPage> {
           elevation: 0,
           centerTitle: true,
           title: Text(widget.appbarTitle),
-         // actions: [buildSocialButtons()],
+          actions: [buildSocialButtons()],
         ),
         body: Padding(
           padding: const EdgeInsets.all(20.0),

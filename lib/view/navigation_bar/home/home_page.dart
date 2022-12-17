@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import 'info.dart';
 
 class HomePage extends StatefulWidget {
@@ -31,7 +30,7 @@ class _HomePageState extends State<HomePage> {
         builder: (context, snapshot) {
           if (!snapshot.hasData) return const LinearProgressIndicator();
           // gridview ile yap
-
+          if (snapshot.hasError) debugPrint('errrorrr ${snapshot.error}');
           return GridView.builder(
             shrinkWrap: true,
             primary: false,
