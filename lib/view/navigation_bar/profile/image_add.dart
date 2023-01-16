@@ -88,7 +88,7 @@ class _GoogleMLKitExampleState extends State<GoogleMLKitExample> {
     return ListView(
       shrinkWrap: true,
       children: <Widget>[
-        if (this._imageFile == null)
+        if (_imageFile == null)
           Container(
             height: 250,
             child: const Icon(
@@ -97,7 +97,7 @@ class _GoogleMLKitExampleState extends State<GoogleMLKitExample> {
             ),
           )
         else
-          Container(
+          SizedBox(
             height: 250,
             width: 250,
             child: CircleAvatar(

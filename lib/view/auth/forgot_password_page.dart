@@ -26,10 +26,10 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        title: Text('Şifreyi Sıfırla'),
+        title: const Text('Şifreyi Sıfırla'),
       ),
       body: Padding(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         child: Form(
             key: formKey,
             child: Padding(
@@ -37,37 +37,37 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
+                  const Text(
                     'Şifrenizi Sıfırlayın',
                     textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 24),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   TextFormField(
                     controller: emailController,
                     cursorColor: Colors.white,
                     textInputAction: TextInputAction.done,
-                    decoration: InputDecoration(labelText: 'Email'),
+                    decoration: const InputDecoration(labelText: 'Email'),
                     autovalidateMode: AutovalidateMode.onUserInteraction,
                     validator: (email) =>
                         email != null && !EmailValidator.validate(email)
                             ? 'Enter a valid email'
                             : null,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   ElevatedButton.icon(
                     onPressed: resetPassword,
-                    icon: Icon(Icons.email_outlined),
-                    label: Text(
+                    icon: const Icon(Icons.email_outlined),
+                    label: const Text(
                       'Şifreyi Sıfırla',
                       style: TextStyle(fontSize: 24),
                     ),
                     style: ElevatedButton.styleFrom(
-                        minimumSize: Size.fromHeight(50)),
+                        minimumSize: const Size.fromHeight(50)),
                   ),
                 ],
               ),

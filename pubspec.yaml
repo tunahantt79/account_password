@@ -31,17 +31,24 @@ environment:
 dependencies:
   cloud_firestore: ^4.2.0
   cupertino_icons: ^1.0.2
+  email_validator: ^2.1.16
   firebase_auth: ^4.2.1
   firebase_core: ^2.4.0
   firebase_storage: ^11.0.8
-  email_validator: ^2.1.16
-  google_ml_kit: ^0.13.0
-  image_picker: ^0.8.6
-  transparent_image: ^2.0.0
-  url_launcher: ^6.1.7
-  font_awesome_flutter: ^10.3.0
+  firebase_messaging: ^14.1.4
+  firebase_crashlytics: ^3.0.7
   flutter:
     sdk: flutter
+  google_ml_kit: ^0.13.0
+  google_nav_bar: ^5.0.6
+  image_gallery_saver: ^1.7.1
+  image_picker: ^0.8.6
+  path_provider: ^2.0.2
+  permission_handler: ^10.2.0
+  screenshot: ^1.2.3
+  share_plus: ^2.1.4
+  transparent_image: ^2.0.0
+  grock: ^0.0.9+4
 
 dev_dependencies:
   flutter_lints: ^2.0.0
@@ -57,7 +64,6 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
-
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - assets/images/

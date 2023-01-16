@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:kullanici_sifre/view/navigation_bar/message/service.dart';
 import 'info.dart';
 
 class HomePage extends StatefulWidget {
@@ -11,6 +12,12 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+    final _service = FirebaseNotificationService();
+     @override
+  void initState() {
+    super.initState();
+    _service.connectNotification();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,29 +53,36 @@ class _HomePageState extends State<HomePage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Image.network(ds['image'].toString()),
-                    Text(
-                      ds['name'].toString(),
-                      style: const TextStyle(fontSize: 20),
+                    Expanded(
+                        flex: 3, child: Image.network(ds['image'].toString())),
+                    Expanded(
+                      flex: 1,
+                      child: Text(
+                        ds['name'].toString(),
+                        style: const TextStyle(fontSize: 15),
+                      ),
                     ),
-                    ElevatedButton.icon(
-                      onPressed: () => Navigator.of(
-                        context,
-                      ).push(
-                          CupertinoPageRoute(builder: (BuildContext context) {
-                        return InfoPage(
-                          appbarTitle: ds['name'].toString(),
-                          image: ds['image'].toString(),
-                          info: ds['info'].toString(),
-                        );
-                      })),
-                      style: ElevatedButton.styleFrom(
-                        minimumSize: const Size.fromHeight(50),
+                    Expanded(
+                      flex: 1,
+                      child: ElevatedButton.icon(
+                        onPressed: () => Navigator.of(
+                          context,
+                        ).push(
+                            CupertinoPageRoute(builder: (BuildContext context) {
+                          return InfoPage(
+                            appbarTitle: ds['name'].toString(),
+                            image: ds['image'].toString(),
+                            info: ds['info'].toString(),
+                          );
+                        })),
+                        style: ElevatedButton.styleFrom(
+                          minimumSize: const Size.fromHeight(50),
+                        ),
+                        icon: const Icon(
+                          Icons.info,
+                        ),
+                        label: const Text('Hakkinda'),
                       ),
-                      icon: const Icon(
-                        Icons.info,
-                      ),
-                      label: const Text('Hakkinda'),
                     ),
                   ],
                 ),

@@ -16,21 +16,25 @@ class ProfilePage extends StatelessWidget {
           title: const Text('Profil'),
         ),
         drawer: Drawer(
-          child: ListView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Center(child: Text('Giriş yapılan e-mail')),
-              const SizedBox(
-                height: 8,
-              ),
-              Center(
-                child: Text(
-                  user.email!,
-                  style: const TextStyle(fontSize: 20),
-                ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
+              DrawerHeader(
+                  duration: const Duration(milliseconds: 100),
+                  child: ListView(
+                    children: [
+                      const Center(child: Text('Giriş yapılan e-mail')),
+                      const SizedBox(
+                        height: 8,
+                      ),
+                      Center(
+                        child: Text(
+                          user.email!,
+                          style: const TextStyle(fontSize: 20),
+                        ),
+                      ),
+                    ],
+                  )),
               Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: ElevatedButton.icon(
